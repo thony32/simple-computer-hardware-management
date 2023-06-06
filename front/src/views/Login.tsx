@@ -20,7 +20,7 @@ export default function Login() {
                             </label>
                             <input
                                 type="text"
-                                placeholder="email"
+                                placeholder="Email@example.com"
                                 className="input input-bordered"
                             />
                         </div>
@@ -30,7 +30,7 @@ export default function Login() {
                             </label>
                             <input
                                 type="text"
-                                placeholder="password"
+                                placeholder="Password"
                                 className="input input-bordered"
                             />
                             <label className="label">
@@ -42,9 +42,13 @@ export default function Login() {
                                 </a>
                             </label>
                         </div>
-                        <div className="flex gap-5 mt-6">
-                            <Link to="/admin" className="btn btn-primary">Login</Link>
-                            <Link to="/" className="btn">Cancel</Link>
+                        <div className="flex justify-between mt-6 space-x-2">
+                            <Link to="/admin" className="btn btn-primary w-1/2">
+                                Login
+                            </Link>
+                            <Link to="/" className="btn w-1/2">
+                                Cancel
+                            </Link>
                         </div>
                     </div>
                 </div>
