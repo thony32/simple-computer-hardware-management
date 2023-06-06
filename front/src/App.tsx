@@ -1,17 +1,23 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./views/Login";
-import Signup from "./views/Signup";
+import Navbar from "./components/navbar";
+import Landing from "./views/Landing";
+import Sidebar from "./components/sidebar";
+import Dashboard from "./admin/Dashboard";
+import Products from "./admin/Products";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
-
-                    <Route index element={<Login />} />
-                    <Route path="/signup" element={<Signup />} />
-                    {/* <Route path="contact" element={<Contact />} />
-                    <Route path="*" element={<NoPage />} /> */}
-
+                <Route path="/" element={<Navbar />}>
+                    <Route index element={<Landing />} />
+                </Route>
+                <Route path="login" element={<Login />} />
+                <Route path="admin" element={<Sidebar/>}>
+                    <Route path="dashboard" element={<Dashboard />} />
+                    <Route path="products" element={<Products />} />
+                </Route>
             </Routes>
         </BrowserRouter>
     );
