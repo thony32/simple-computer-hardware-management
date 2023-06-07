@@ -15,7 +15,7 @@ function App() {
                 </Route>
                 <Route path="login" element={<Login />} />
                 <Route path="admin" element={<Sidebar/>}>
-                    <Route path="dashboard" element={<Dashboard />} />
+                    <Route index element={<Dashboard />} />
                     <Route path="products" element={<Products />} />
                 </Route>
             </Routes>

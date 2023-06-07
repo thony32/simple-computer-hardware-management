@@ -4,23 +4,16 @@ export default function Login() {
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
-                    <p className="py-6">
-                        Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                        assumenda excepturi exercitationem quasi. In deleniti
-                        eaque aut repudiandae et a id nisi.
-                    </p>
-                </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
                         <div className="form-control">
+                            <h1 className="text-center font-bold text-2xl"> SIGN IN!</h1>
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text">Username</span>
                             </label>
                             <input
                                 type="text"
-                                placeholder="Email@example.com"
+                                placeholder="Enter your username"
                                 className="input input-bordered"
                             />
                         </div>
@@ -29,8 +22,8 @@ export default function Login() {
                                 <span className="label-text">Password</span>
                             </label>
                             <input
-                                type="text"
-                                placeholder="Password"
+                                type="password"
+                                placeholder="Enter your password"
                                 className="input input-bordered"
                             />
                             <label className="label">
@@ -44,9 +37,9 @@ export default function Login() {
                         </div>
                         <div className="flex justify-between mt-6 space-x-2">
                             <Link to="/admin" className="btn btn-primary w-1/2">
-                                Login
+                                Sign In
                             </Link>
-                            <Link to="/" className="btn w-1/2">
+                            <Link to="/" className="btn ">
                                 Cancel
                             </Link>
                         </div>
@@ -54,5 +47,6 @@ export default function Login() {
                 </div>
             </div>
         </div>
+
     );
 }

@@ -1,7 +1,8 @@
 export default function Footer() {
+
     return (
         <div>
-            <footer className="footer p-10 bg-neutral text-neutral-content">
+            <footer className="footer p-10 bg-base-200 text-current">
                 <div>
                     <span className="footer-title">Services</span>
                     <a className="link link-hover">Branding</a>
