@@ -30,10 +30,7 @@ const Navbar = () => {
                             className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
                         >
                             <li>
-                                <Link
-                                    to="/"
-
-                                >
+                                <Link to="/">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -363,9 +360,23 @@ const Navbar = () => {
                     </label>
                     <Link
                         to="/login"
-                        className="btn bg-[#0079C1] text-base-200"
+                        className="btn bg-[#0079C1] hover:bg-[#00457C] text-base-200"
                     >
-                        Sign in
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="w-6 h-6"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                            />
+                        </svg>
+                        Admin
                     </Link>
                 </div>
             </div>

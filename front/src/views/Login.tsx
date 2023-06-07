@@ -7,7 +7,7 @@ export default function Login() {
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
                         <div className="form-control">
-                            <h1 className="text-center font-bold text-2xl"> SIGN IN!</h1>
+                            <h1 className="text-center font-bold text-2xl"> SIGN IN AS ADMINISTRATOR!</h1>
                             <label className="label">
                                 <span className="label-text">Username</span>
                             </label>
@@ -36,7 +36,7 @@ export default function Login() {
                             </label>
                         </div>
                         <div className="flex justify-between mt-6 space-x-2">
-                            <Link to="/admin" className="btn btn-primary w-1/2">
+                            <Link to="/admin" className="btn btn-primary w-2/3">
                                 Sign In
                             </Link>
                             <Link to="/" className="btn ">
