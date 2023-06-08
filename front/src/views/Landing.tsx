@@ -1,4 +1,21 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+
+
 export default function Landing() {
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        axios.get('http://127.0.0.1:8000/api/products')
+          .then(response => {
+            setProducts(response.data);
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      }, []);
+
+
     return (
         <div>
             <section className="text-gray-600 body-font">
@@ -18,107 +35,41 @@ export default function Landing() {
                             food truck ugh squid celiac humblebrag.
                         </p>
                     </div>
+
+                    {/* card */}
+
+
                     <div className="flex flex-wrap -m-4">
-                        <div className="xl:w-1/4 md:w-1/2 p-4">
-                            <div className="bg-gray-100 p-6 rounded-lg space-y-4">
-                                <img
-                                    className="h-40 rounded w-full object-cover object-center mb-6"
-                                    src="https://dummyimage.com/720x400"
-                                    alt="content"
-                                />
-                                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
-                                    Chichen Itza
-                                </h2>
-                                <p className="leading-relaxed text-base">
-                                    Fingerstache flexitarian street art 8-bit
-                                    waistcoat. Distillery hexagon disrupt edison
-                                    bulbche.
-                                </p>
-                                <div>
-                                    <div className="flex justify-between items-end">
-                                        <div className="">
-                                            <h1 className="font-bold text-4xl">
-                                                $2
-                                            </h1>
-                                        </div>
-                                        <div>
-                                            <div className="flex flex-col gap-4">
-                                                <button className="btn btn-neutral">
-                                                    Add to cart
-                                                </button>
-                                                <div className="badge badge-success badge-outline">
-                                                    Disponible
-                                                </div>
+                        {products.map((product :any) => (
+                            <div className="xl:w-1/4 md:w-1/2 p-4">
+                                <div className="bg-gray-100 p-6 rounded-lg space-y-4">
+                                    <img
+                                        className="h-40 rounded w-full object-cover object-center mb-6"
+                                        src={product.Image}
+                                        alt="content"
+                                    />
+                                    <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
+                                        {product.Design}
+                                    </h2>
+                                    <p className="leading-relaxed text-base">
+                                        {product.Description}
+                                    </p>
+                                    <div>
+                                        <div className="flex justify-between items-end">
+                                            <div className="">
+                                                <h1 className="font-bold text-2xl">
+                                                    ${product.Unit_Price}
+                                                </h1>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="xl:w-1/4 md:w-1/2 p-4">
-                            <div className="bg-gray-100 p-6 rounded-lg space-y-4">
-                                <img
-                                    className="h-40 rounded w-full object-cover object-center mb-6"
-                                    src="https://dummyimage.com/720x400"
-                                    alt="content"
-                                />
-                                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
-                                    Chichen Itza
-                                </h2>
-                                <p className="leading-relaxed text-base">
-                                    Fingerstache flexitarian street art 8-bit
-                                    waistcoat. Distillery hexagon disrupt edison
-                                    bulbche.
-                                </p>
-                                <div>
-                                    <div className="flex justify-between items-end">
-                                        <div className="">
-                                            <h1 className="font-bold text-4xl">
-                                                $2
-                                            </h1>
-                                        </div>
-                                        <div>
-                                            <div className="flex flex-col gap-4">
-                                                <button className="btn btn-neutral">
-                                                    Add to cart
-                                                </button>
-                                                <div className="badge badge-success badge-outline">
-                                                    Disponible
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="xl:w-1/4 md:w-1/2 p-4">
-                            <div className="bg-gray-100 p-6 rounded-lg space-y-4">
-                                <img
-                                    className="h-40 rounded w-full object-cover object-center mb-6"
-                                    src="https://dummyimage.com/720x400"
-                                    alt="content"
-                                />
-                                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
-                                    Chichen Itza
-                                </h2>
-                                <p className="leading-relaxed text-base">
-                                    Fingerstache flexitarian street art 8-bit
-                                    waistcoat. Distillery hexagon disrupt edison
-                                    bulbche.
-                                </p>
-                                <div>
-                                    <div className="flex justify-between items-end">
-                                        <div className="">
-                                            <h1 className="font-bold text-4xl">
-                                                $2
-                                            </h1>
-                                        </div>
-                                        <div>
-                                            <div className="flex flex-col gap-4">
-                                                <button className="btn btn-neutral">
-                                                    Add to cart
-                                                </button>
-                                                <div className="badge badge-error gap-2">
+                                            <div>
+                                                <div className="flex flex-col gap-4">
+                                                    <button className="btn btn-neutral">
+                                                        Add to cart
+                                                    </button>
+                                                    <div className="badge badge-success gap-2">
+                                                        Available
+                                                    </div>
+                                                    {/* <div className="badge badge-error gap-2">
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         fill="none"
@@ -133,62 +84,15 @@ export default function Landing() {
                                                         ></path>
                                                     </svg>
                                                     Out of stock
+                                                </div> */}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="xl:w-1/4 md:w-1/2 p-4">
-                            <div className="bg-gray-100 p-6 rounded-lg space-y-4">
-                                <img
-                                    className="h-40 rounded w-full object-cover object-center mb-6"
-                                    src="https://dummyimage.com/720x400"
-                                    alt="content"
-                                />
-                                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
-                                    Chichen Itza
-                                </h2>
-                                <p className="leading-relaxed text-base">
-                                    Fingerstache flexitarian street art 8-bit
-                                    waistcoat. Distillery hexagon disrupt edison
-                                    bulbche.
-                                </p>
-                                <div>
-                                    <div className="flex justify-between items-end">
-                                        <div className="">
-                                            <h1 className="font-bold text-4xl">
-                                                $2
-                                            </h1>
-                                        </div>
-                                        <div>
-                                            <div className="flex flex-col gap-4">
-                                                <button className="btn btn-neutral">
-                                                    Add to cart
-                                                </button>
-                                                <div className="badge badge-error gap-2">
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        fill="none"
-                                                        viewBox="0 0 24 24"
-                                                        className="inline-block w-4 h-4 stroke-current"
-                                                    >
-                                                        <path
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                            strokeWidth="2"
-                                                            d="M6 18L18 6M6 6l12 12"
-                                                        ></path>
-                                                    </svg>
-                                                    Out of stock
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
+
                     </div>
                 </div>
             </section>
