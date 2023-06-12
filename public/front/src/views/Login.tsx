@@ -35,7 +35,7 @@ export default function Login() {
             />
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <div className="card-body">
+                    <form className="card-body">
                         <div className="form-control">
                             <h1 className="text-center font-bold text-2xl">
                                 {" "}
@@ -49,6 +49,7 @@ export default function Login() {
                                 placeholder="Enter your username"
                                 className="input input-bordered"
                                 ref={refUsername}
+                                required
                             />
                         </div>
                         <div className="form-control">
@@ -60,6 +61,7 @@ export default function Login() {
                                 placeholder="Enter your password"
                                 className="input input-bordered"
                                 ref={refPassword}
+                                required
                             />
                             <label className="label">
                                 <a
@@ -81,7 +83,7 @@ export default function Login() {
                                 Cancel
                             </Link>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

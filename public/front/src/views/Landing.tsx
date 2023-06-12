@@ -58,13 +58,13 @@ export default function Landing() {
                                         <div className="flex justify-between items-end">
                                             <div className="">
                                                 <h1 className="font-bold text-2xl">
-                                                    ${product.Unit_Price}
+                                                    Ar {product.Unit_Price}
                                                 </h1>
                                             </div>
                                             <div>
                                                 <div className="flex flex-col gap-4">
                                                     <button className="btn btn-neutral">
-                                                        Add to cart
+                                                        BUY NOW
                                                     </button>
                                                     <div className="badge badge-success gap-2">
                                                         Available

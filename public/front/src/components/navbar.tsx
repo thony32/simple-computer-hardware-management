@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import Footer from "./Footer";
-import Cart from "../modals/Cart";
+import Cart from "../modals/BuyForm";
 
 const Navbar = () => {
     return (
@@ -335,7 +335,7 @@ const Navbar = () => {
                 {/* Navbar end */}
 
                 <div className="navbar-end space-x-0">
-                    <Cart/>
+
                     <Link
                         to="/login"
                         className="btn bg-[#0079C1] hover:bg-[#00457C] text-base-200"
