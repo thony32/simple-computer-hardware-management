@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get("products",[App\Http\Controllers\ProductController::class,'listProduct']);
 Route::post("products",[App\Http\Controllers\ProductController::class,'addProduct']);
 Route::post('upload', [App\Http\Controllers\ProductController::class,'uploadFile']);
+Route::delete("products/{id}",[App\Http\Controllers\ProductController::class,'deleteProduct']);

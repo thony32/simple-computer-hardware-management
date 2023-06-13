@@ -5,5 +5,5 @@ export default {
         extend: {},
     },
     // eslint-disable-next-line no-undef
-    plugins: [require('daisyui', 'preline/plugin')],
+    plugins: [require('daisyui', 'preline/plugin', 'flowbite/plugin')],
 };

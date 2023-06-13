@@ -14,9 +14,10 @@ export default function Login() {
 
         if (username === "admin" && password === "admin") {
             navigate("/admin");
-        } else {
-            toast.error("Login failed! Wrong username or password");
-        }
+        } else if (username === "" || password === "") {
+            toast.error("Login failed! The two fields are mandatory");
+        } else { toast.error("Login failed! Incorrect username or password");}
+
     };
 
     return (
@@ -42,7 +43,7 @@ export default function Login() {
                                 SIGN IN AS ADMINISTRATOR!
                             </h1>
                             <label className="label">
-                                <span className="label-text">Username</span>
+                                <span className="label-text">Username<span className="text-red-500">*</span></span>
                             </label>
                             <input
                                 type="text"
@@ -54,7 +55,7 @@ export default function Login() {
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text">Password<span className="text-red-500">*</span></span>
                             </label>
                             <input
                                 type="password"
@@ -65,8 +66,8 @@ export default function Login() {
                             />
                             <label className="label">
                                 <a
-                                    href="#"
-                                    className="label-text-alt link link-hover"
+
+                                    className="label-text-alt link link-hover text-blue-400"
                                 >
                                     Forgot password?
                                 </a>
@@ -74,7 +75,7 @@ export default function Login() {
                         </div>
                         <div className="flex justify-between mt-6 space-x-2">
                             <button
-                                className="btn btn-primary w-2/3"
+                                className="btn bg-[#0079C1] w-2/3 text-white hover:bg-[#0062a3]"
                                 onClick={handleLogin}
                             >
                                 Sign In

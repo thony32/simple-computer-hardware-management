@@ -20,7 +20,7 @@ export default function Landing() {
         <div>
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto">
-                    <div className="flex flex-wrap w-full mb-20">
+                    <div className="flex flex-wrap w-full mb-20 bg-base-200 p-8">
                         <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
                             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
                                 Pitchfork Kickstarter Taxidermy
@@ -51,40 +51,24 @@ export default function Landing() {
                                     <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
                                         {product.Design}
                                     </h2>
-                                    <p className="leading-relaxed text-base">
+                                    <p className="leading-relaxed text-base h-48 overflow-y-scroll">
                                         {product.Description}
                                     </p>
                                     <div>
                                         <div className="flex justify-between items-end">
                                             <div className="">
-                                                <h1 className="font-bold text-2xl">
+                                                <h1 className="font-bold text-xl">
                                                     Ar {product.Unit_Price}
                                                 </h1>
                                             </div>
                                             <div>
                                                 <div className="flex flex-col gap-4">
                                                     <button className="btn btn-neutral">
-                                                        BUY NOW
+                                                         Purchase Now
                                                     </button>
                                                     <div className="badge badge-success gap-2">
                                                         Available
                                                     </div>
-                                                    {/* <div className="badge badge-error gap-2">
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        fill="none"
-                                                        viewBox="0 0 24 24"
-                                                        className="inline-block w-4 h-4 stroke-current"
-                                                    >
-                                                        <path
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                            strokeWidth="2"
-                                                            d="M6 18L18 6M6 6l12 12"
-                                                        ></path>
-                                                    </svg>
-                                                    Out of stock
-                                                </div> */}
                                                 </div>
                                             </div>
                                         </div>
