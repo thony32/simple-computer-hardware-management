@@ -1,14 +1,7 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-declare global {
-    interface Window {
-        my_modal_3: {
-            showModal: (productId: number) => void;
-            close: () => void;
-        };
-    }
-}
+
 
 export default function Products() {
     const [productName, setproductName] = useState("");
@@ -43,16 +36,7 @@ export default function Products() {
     // * add product
 
     const handleSubmit = (event: any) => {
-        if (
-            productName === "" ||
-            description === "" ||
-            unitPrice === "" ||
-            quantity === "" ||
-            productImage === null
-        ) {
-            setErrName(true);
-        } else {
-            event.preventDefault();
+        event.preventDefault();
 
             const formData = new FormData();
             formData.append("type", productType);
@@ -74,7 +58,6 @@ export default function Products() {
                     // Handle error
                 });
             toast.success("Product Added Successfully!");
-        }
     };
 
     // * list data
@@ -383,7 +366,7 @@ export default function Products() {
                                         <th>Printer Type</th>
                                         <th>Description</th>
                                         <th>Unit Price</th>
-                                        <th>Quantity</th>
+                                        <th>Quantity In Stock</th>
                                         <th>Image</th>
                                         <th></th>
                                     </tr>
@@ -404,7 +387,7 @@ export default function Products() {
                                                         product.id +
                                                         "my_modal_6"
                                                     }
-                                                    className="btn btn-sm bg-red-500 hover:bg-red-700 text-base-100"
+                                                    className="btn btn-sm bg-red-500 hover:bg-red-700 text-base-100 rounded-full"
                                                 >
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"

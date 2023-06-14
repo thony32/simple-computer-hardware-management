@@ -81,7 +81,7 @@ export default function Login() {
                                 Sign In
                             </button>
                             <Link to="/" className="btn ">
-                                Cancel
+                                Back
                             </Link>
                         </div>
                     </form>

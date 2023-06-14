@@ -5,7 +5,7 @@ import Cart from "../modals/BuyForm";
 const Navbar = () => {
     return (
         <>
-            <div className="navbar bg-base-100 shadow-lg">
+            <div className="navbar bg-base-200 shadow-lg">
                 {/* Mobile screen */}
 
                 <div className="navbar-start">
