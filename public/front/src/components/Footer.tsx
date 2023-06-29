@@ -1,17 +1,14 @@
 export default function Footer() {
     return (
         <div>
-            <footer className="flex justify-center gap-[410px] footer p-10 bg-base-300 text-base-content">
-
-                <div>
-                    <span className="footer-title">Company</span>
+            <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
+                <div className="grid grid-flow-col gap-4">
                     <a className="link link-hover">About us</a>
                     <a className="link link-hover">Contact</a>
                     <a className="link link-hover">Jobs</a>
                     <a className="link link-hover">Press kit</a>
                 </div>
                 <div>
-                    <span className="footer-title">Social</span>
                     <div className="grid grid-flow-col gap-4">
                         <a>
                             <svg
@@ -47,6 +44,12 @@ export default function Footer() {
                             </svg>
                         </a>
                     </div>
+                </div>
+                <div>
+                    <p>
+                        Copyright © 2023 - All right reserved by MAHEFASOA Ny Riana Anthony
+
+                    </p>
                 </div>
             </footer>
         </div>

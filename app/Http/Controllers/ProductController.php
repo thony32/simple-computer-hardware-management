@@ -44,6 +44,12 @@ class ProductController extends Controller
         return $product->toJSON();
     }
 
+    function searchProduct() {
+        $search_text = $_GET['query'];
+        $products = Product::where('Design', 'LIKE', '%'.$search_text.'%')->get();
+        return $products->toJSON();
+    }
+
     // public function updateProduct(Request $request, $id)
     // {
     //     $product = Product::find($id);

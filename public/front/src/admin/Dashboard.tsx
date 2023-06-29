@@ -27,8 +27,8 @@ const dataFormatter = (number: number) => {
 
 export default function Dashboard() {
     return (
-        <div className="space-y-12">
-            <h1 className="text-4xl text-center font-bold">DASHBOARD</h1>
+        <div className="space-y-4">
+            <h1 className="text-2xl lg:text-4xl text-center font-bold">DASHBOARD</h1>
             <Card>
                 <Title>Writing Contest: Entries</Title>
                 <BarChart

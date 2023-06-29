@@ -8,6 +8,12 @@
   </head>
   <body>
     <div id="root"></div>
+    <div
+        id="cursor"
+        class="fixed w-8 h-8 border-none bg-slate-200 rounded-[50%] pointer-events-none mix-blend-difference will-change-transform z-50"
+        style="@media (max-width: 768px) { display: none; }"
+      ></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
+<script src="./src/assets/mouse.js"></script>

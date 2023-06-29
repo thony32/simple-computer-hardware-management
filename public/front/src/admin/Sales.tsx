@@ -1,5 +1,6 @@
 export default function Sales() {
     return (
+        
         <div>
             <h1 className="text-2xl lg:text-4xl text-center font-bold">
                 SALES MANAGEMENT

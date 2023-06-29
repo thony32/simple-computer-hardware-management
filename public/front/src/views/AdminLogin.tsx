@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function Login() {
+export default function AdminLogin() {
     const refUsername = useRef() as any;
     const refPassword = useRef() as any;
     const navigate = useNavigate();
@@ -13,11 +13,13 @@ export default function Login() {
         const password = refPassword.current.value;
 
         if (username === "admin" && password === "admin") {
+            localStorage.setItem("login", "true");
             navigate("/admin");
         } else if (username === "" || password === "") {
             toast.error("Login failed! The two fields are mandatory");
-        } else { toast.error("Login failed! Incorrect username or password");}
-
+        } else {
+            toast.error("Login failed! Incorrect username or password");
+        }
     };
 
     return (
@@ -32,18 +34,21 @@ export default function Login() {
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
-                theme="light"
+                theme="colored"
             />
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form className="card-body">
+                    <div className="card-body">
                         <div className="form-control">
                             <h1 className="text-center font-bold text-2xl">
                                 {" "}
                                 SIGN IN AS ADMINISTRATOR!
                             </h1>
                             <label className="label">
-                                <span className="label-text">Username<span className="text-red-500">*</span></span>
+                                <span className="label-text">
+                                    Username
+                                    <span className="text-red-500">*</span>
+                                </span>
                             </label>
                             <input
                                 type="text"
@@ -55,7 +60,10 @@ export default function Login() {
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Password<span className="text-red-500">*</span></span>
+                                <span className="label-text">
+                                    Password
+                                    <span className="text-red-500">*</span>
+                                </span>
                             </label>
                             <input
                                 type="password"
@@ -65,26 +73,25 @@ export default function Login() {
                                 required
                             />
                             <label className="label">
-                                <a
-
-                                    className="label-text-alt link link-hover text-blue-400"
-                                >
+                                <a className="label-text-alt link link-hover text-blue-400">
                                     Forgot password?
                                 </a>
                             </label>
                         </div>
-                        <div className="flex justify-between mt-6 space-x-2">
-                            <button
-                                className="btn bg-[#0079C1] w-2/3 text-white hover:bg-[#0062a3]"
-                                onClick={handleLogin}
-                            >
-                                Sign In
-                            </button>
-                            <Link to="/" className="btn ">
-                                Back
-                            </Link>
+                        <div className="flex flex-col">
+                            <div className="flex justify-between mt-2 space-x-2">
+                                <button
+                                    className="btn bg-[#0079C1] w-2/3 text-white hover:bg-[#0062a3]"
+                                    onClick={handleLogin}
+                                >
+                                    Sign In
+                                </button>
+                                <Link to="/" className="btn">
+                                    Back
+                                </Link>
+                            </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
